@@ -19,7 +19,7 @@ function App() {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/history?userId=${user.id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/history?userId=${user.id}`);
       setHistory(response.data);
     } catch (err) {
       console.error("Failed to fetch history");
@@ -39,7 +39,7 @@ function App() {
     formData.append('resume', file);
     formData.append('userId', user.id);
     try {
-      const response = await axios.post('http://localhost:5000/analyze', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/analyze`, formData);
       setResult(response.data);
       fetchHistory();
     } catch (err) {
