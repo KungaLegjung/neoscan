@@ -10,7 +10,7 @@ import {
 import Landing from './Landing';
 import Navbar from './components/Navbar';
 
-console.log("API URL:", import.meta.env.VITE_API_URL)
+
 function App() {
   const { user } = useUser();
   const [file, setFile] = useState(null);
